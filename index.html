@@ -1,0 +1,54 @@
+# mmansoor05..github.io
+<!DOCTYPE html>
+<title>TO DO LIST</title>
+<html>
+    <head>
+        <link rel= "stylesheet" href="Todo List.css">
+         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <meta charset = "UTF-8">
+    <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <header> 
+    <h1> TO-DO-LIST </h1>
+    </header>
+    
+    <form> 
+    <div class = "wholeform">
+    <input class="new-item" type="text" id="new-item" name="new-item" placeholder="Add a new item..."> <br>
+    <button class="addbutton"type="button"> Add </button> <br> <br>
+    
+    </div>    
+    </form>
+    
+    <div class = "to-dos">
+        </div>
+   </body>
+
+    
+    <script>
+        const item = document.querySelector(".new-item"); 
+        const colorButton = document.querySelector(".addbutton");
+        const todos = document.querySelector(".to-dos");
+        
+        
+        colorButton.addEventListener("click", function() {
+        colorButton.classList.add("addButton");  
+        let para = document.createElement('p');
+        para.innerText = item.value;
+        todos.appendChild(para);
+            item.value = "";
+            para.addEventListener("click", function() {
+                para.style.textDecoration = "line-through";
+            })
+             para.addEventListener('dblclick', function() {
+                todos.removeChild(para);
+            })
+            
+     }) 
+        
+        
+    </script>
+
+    
+</html>
